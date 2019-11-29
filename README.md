@@ -1,6 +1,6 @@
-# Spring Boot Microservices POC 
+# Microservices-spring-boot
 
-##POCs implemented to support microservices architecture.
+** Microservices Framework using Spring API Gateway, Spring Eureka Discovery, Zipkin, Sleuth and ELK stack **
 
 ## Requirements
 
@@ -17,3 +17,4 @@
 + spring-security-oauth2 v2.3.8.RELEASE
 
 Note: Srping cloud version would be changed to Hoxton.RELEASE once it is availble in maven central
+
