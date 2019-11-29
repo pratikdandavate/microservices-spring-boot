@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: organ-service
+  profiles:
+    active:
+    - development
+
+# N.B. this is the default:
+    
+  cloud:
+    config:
+       uri: http://localhost:8888

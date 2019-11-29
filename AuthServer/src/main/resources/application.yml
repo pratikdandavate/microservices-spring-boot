@@ -1,0 +1,47 @@
+server:
+  port: 9191
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/oauthDB?createDatabaseIfNotExist=true
+    username: root
+    password: root
+#    driver-class-name: com.mysql.jdbc.driver
+    initialization-mode: always
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+         show_sql: true
+         format_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
+#spring:
+#  security:
+#    user:
+#      name: pratik
+#      password: pratik123
+#      roles:
+#      - ADMIN
+#      - USER
+#security:
+#  oauth2:
+#      authorization:
+#        check-token-access: permitAll
+#      client:
+#        client-id: mobile
+#        client-secret: secret
+#        access-token-validity-seconds: 3600
+#        authorized-grant-types:
+#        - refresh_token
+#        - authorization_code
+#        - password
+#        - client_credentials
+#        scope: READ,WRITE

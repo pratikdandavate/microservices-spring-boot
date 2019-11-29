@@ -1,0 +1,281 @@
+2019-11-20 15:45:50,792 INFO o.s.b.l.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\E73291\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/E73291/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/E73291/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/E73291/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/E73291/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/E73291/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/E73291/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2019-11-20 15:45:50,797 INFO o.s.b.l.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\E73291\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/E73291/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2019-11-20 15:45:50,797 INFO o.s.b.l.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\E73291\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.0.1\jaxb-impl-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/E73291/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0.1/jaxb-core.jar
+2019-11-20 15:45:50,797 INFO o.s.b.l.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-20 15:45:50,975 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8bf36af3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:51,135 INFO o.s.c.c.c.ConfigServicePropertySourceLocator [restartedMain] Fetching config from server at : http://localhost:8888
+2019-11-20 15:45:53,370 INFO o.s.c.c.c.ConfigServicePropertySourceLocator [restartedMain] Located environment: name=organ-service, profiles=[development], label=null, version=c535c953699ab79fdd8273292e2d6dea5533acf4, state=null
+2019-11-20 15:45:53,371 INFO o.s.c.b.c.PropertySourceBootstrapConfiguration [restartedMain] Located property source: OriginTrackedCompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/organ-service-development.yml'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/organ-service.yml'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/application.yml'}]}
+2019-11-20 15:45:53,429 INFO o.s.b.SpringApplication [restartedMain] The following profiles are active: development
+2019-11-20 15:45:54,179 WARN o.s.b.a.e.EndpointId [restartedMain] Endpoint ID 'bus-env' contains invalid characters, please migrate to a valid format.
+2019-11-20 15:45:54,379 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 15:45:54,422 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 37ms. Found 1 repository interfaces.
+2019-11-20 15:45:54,542 WARN o.s.b.a.e.EndpointId [restartedMain] Endpoint ID 'bus-refresh' contains invalid characters, please migrate to a valid format.
+2019-11-20 15:45:54,584 WARN o.s.b.a.e.EndpointId [restartedMain] Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2019-11-20 15:45:54,765 INFO o.s.c.c.s.GenericScope [restartedMain] BeanFactory id=2d17db07-2f48-3bb3-9528-71f21ddf0569
+2019-11-20 15:45:54,834 INFO o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor [restartedMain] No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-11-20 15:45:54,838 INFO o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor [restartedMain] No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-11-20 15:45:54,844 INFO o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor [restartedMain] No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-11-20 15:45:54,908 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:54,956 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:54,960 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:54,964 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1d5ab292' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:54,965 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:54,968 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:54,981 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:54,985 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:55,000 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:55,005 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:55,013 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:55,020 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:55,058 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8bf36af3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 15:45:55,582 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8081 (http)
+2019-11-20 15:45:55,592 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8081"]
+2019-11-20 15:45:55,593 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2019-11-20 15:45:55,594 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-20 15:45:55,723 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2019-11-20 15:45:55,723 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2275 ms
+2019-11-20 15:45:55,869 WARN c.n.c.s.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2019-11-20 15:45:55,870 INFO c.n.c.s.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-11-20 15:45:55,884 INFO c.n.c.DynamicPropertyFactory [restartedMain] DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6c4da06f
+2019-11-20 15:45:56,849 INFO o.s.s.c.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'taskScheduler'
+2019-11-20 15:45:57,272 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-11-20 15:45:57,338 INFO o.h.Version [restartedMain] HHH000412: Hibernate Core {5.4.8.Final}
+2019-11-20 15:45:57,495 INFO o.h.a.c.r.j.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-11-20 15:45:57,611 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2019-11-20 15:45:57,732 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2019-11-20 15:45:57,745 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-11-20 15:45:58,421 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-11-20 15:45:58,426 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-20 15:45:58,455 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2019-11-20 15:45:58,733 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-20 15:45:58,803 WARN c.n.c.s.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2019-11-20 15:45:58,803 INFO c.n.c.s.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-11-20 15:45:58,903 INFO o.s.s.c.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-20 15:45:59,198 INFO o.s.c.f.c.c.BeanFactoryAwareFunctionRegistry [restartedMain] Looking up function 'null' with acceptedOutputTypes: []
+2019-11-20 15:45:59,371 INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [restartedMain] 
+
+Using generated security password: cf87d9ed-671a-4ce6-97c8-96be314b6ad9
+
+2019-11-20 15:45:59,547 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c8ee76c, org.springframework.security.web.context.SecurityContextPersistenceFilter@4484fc2, org.springframework.security.web.header.HeaderWriterFilter@7bb74e23, org.springframework.security.web.authentication.logout.LogoutFilter@f18693e, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@6cd52a20, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@761ded97, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76088769, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51be1822, org.springframework.security.web.session.SessionManagementFilter@6e73ccb5, org.springframework.security.web.access.ExceptionTranslationFilter@21d944d0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4bd25ec3]
+2019-11-20 15:45:59,691 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger [restartedMain] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2019-11-20 15:45:59,756 INFO o.s.b.a.e.w.EndpointLinksResolver [restartedMain] Exposing 22 endpoint(s) beneath base path '/actuator'
+2019-11-20 15:45:59,916 INFO o.s.i.c.AbstractSubscribableChannel [restartedMain] Channel 'organ-service-1.springCloudBusInput' has 1 subscriber(s).
+2019-11-20 15:46:00,010 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageChannel springCloudBusInput
+2019-11-20 15:46:00,072 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageChannel errorChannel
+2019-11-20 15:46:00,104 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageChannel nullChannel
+2019-11-20 15:46:00,115 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageChannel springCloudBusOutput
+2019-11-20 15:46:00,130 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageHandler errorLogger
+2019-11-20 15:46:00,148 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@52bc65
+2019-11-20 15:46:00,208 INFO o.s.i.e.EventDrivenConsumer [restartedMain] Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-11-20 15:46:00,209 INFO o.s.i.c.AbstractSubscribableChannel [restartedMain] Channel 'organ-service-1.errorChannel' has 1 subscriber(s).
+2019-11-20 15:46:00,209 INFO o.s.i.e.AbstractEndpoint [restartedMain] started bean '_org.springframework.integration.errorLogger'
+2019-11-20 15:46:00,289 INFO o.s.c.c.c.ConfigServicePropertySourceLocator [restartedMain] Fetching config from server at : http://localhost:8888
+2019-11-20 15:46:00,439 INFO o.s.c.c.c.ConfigServicePropertySourceLocator [restartedMain] Located environment: name=organ-service, profiles=[development], label=null, version=c535c953699ab79fdd8273292e2d6dea5533acf4, state=null
+2019-11-20 15:46:00,440 INFO o.s.c.b.c.PropertySourceBootstrapConfiguration [restartedMain] Located property source: OriginTrackedCompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/organ-service-development.yml'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/organ-service.yml'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/application.yml'}]}
+2019-11-20 15:46:00,609 INFO o.s.a.r.c.AbstractConnectionFactory [restartedMain] Attempting to connect to: [172.28.42.132:5672]
+2019-11-20 15:46:00,646 INFO o.s.a.r.c.AbstractConnectionFactory [restartedMain] Created new connection: rabbitConnectionFactory#588aaa1:0/SimpleConnection@74009530 [delegate=amqp://guest@172.28.42.132:5672/, localPort= 52740]
+2019-11-20 15:46:00,677 INFO o.s.i.c.AbstractSubscribableChannel [restartedMain] Channel 'organ-service-1.springCloudBusOutput' has 1 subscriber(s).
+2019-11-20 15:46:00,689 INFO o.s.c.n.e.InstanceInfoFactory [restartedMain] Setting initial instance status as: STARTING
+2019-11-20 15:46:00,718 INFO c.n.d.DiscoveryClient [restartedMain] Initializing Eureka in region us-east-1
+2019-11-20 15:46:00,864 INFO c.n.d.p.DiscoveryJerseyProvider [restartedMain] Using JSON encoding codec LegacyJacksonJson
+2019-11-20 15:46:00,864 INFO c.n.d.p.DiscoveryJerseyProvider [restartedMain] Using JSON decoding codec LegacyJacksonJson
+2019-11-20 15:46:00,943 INFO c.n.d.p.DiscoveryJerseyProvider [restartedMain] Using XML encoding codec XStreamXml
+2019-11-20 15:46:00,943 INFO c.n.d.p.DiscoveryJerseyProvider [restartedMain] Using XML decoding codec XStreamXml
+2019-11-20 15:46:01,077 INFO c.n.d.s.r.a.ConfigClusterResolver [restartedMain] Resolving eureka endpoints via configuration
+2019-11-20 15:46:01,123 INFO c.n.d.DiscoveryClient [restartedMain] Disable delta property : false
+2019-11-20 15:46:01,123 INFO c.n.d.DiscoveryClient [restartedMain] Single vip registry refresh property : null
+2019-11-20 15:46:01,124 INFO c.n.d.DiscoveryClient [restartedMain] Force full registry fetch : false
+2019-11-20 15:46:01,124 INFO c.n.d.DiscoveryClient [restartedMain] Application is null : false
+2019-11-20 15:46:01,124 INFO c.n.d.DiscoveryClient [restartedMain] Registered Applications size is zero : true
+2019-11-20 15:46:01,124 INFO c.n.d.DiscoveryClient [restartedMain] Application version is -1: true
+2019-11-20 15:46:01,124 INFO c.n.d.DiscoveryClient [restartedMain] Getting all instance registry info from the eureka server
+2019-11-20 15:46:01,216 INFO c.n.d.DiscoveryClient [restartedMain] The response status is 200
+2019-11-20 15:46:01,217 INFO c.n.d.DiscoveryClient [restartedMain] Starting heartbeat executor: renew interval is: 1
+2019-11-20 15:46:01,219 INFO c.n.d.InstanceInfoReplicator [restartedMain] InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-11-20 15:46:01,222 INFO c.n.d.DiscoveryClient [restartedMain] Discovery Client initialized at timestamp 1574244961221 with initial instances count: 1
+2019-11-20 15:46:01,227 INFO o.s.c.n.e.s.EurekaServiceRegistry [restartedMain] Registering application ORGAN-SERVICE with eureka with status UP
+2019-11-20 15:46:01,228 INFO c.n.d.DiscoveryClient$3 [restartedMain] Saw local status change event StatusChangeEvent [timestamp=1574244961228, current=UP, previous=STARTING]
+2019-11-20 15:46:01,229 INFO c.n.d.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ORGAN-SERVICE/PRATIKD.aiit.com:organ-service:8081: registering service...
+2019-11-20 15:46:01,259 INFO c.n.d.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ORGAN-SERVICE/PRATIKD.aiit.com:organ-service:8081 - registration status: 204
+2019-11-20 15:46:01,262 INFO o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner [restartedMain] declaring queue for inbound: springCloudBus.anonymous.OGT6SA2rR_SbxUyN3fLqAg, bound to: springCloudBus
+2019-11-20 15:46:01,281 INFO o.s.i.c.AbstractSubscribableChannel [restartedMain] Channel 'springCloudBus.anonymous.OGT6SA2rR_SbxUyN3fLqAg.errors' has 1 subscriber(s).
+2019-11-20 15:46:01,281 INFO o.s.i.c.AbstractSubscribableChannel [restartedMain] Channel 'springCloudBus.anonymous.OGT6SA2rR_SbxUyN3fLqAg.errors' has 2 subscriber(s).
+2019-11-20 15:46:01,299 INFO o.s.i.e.AbstractEndpoint [restartedMain] started bean 'inbound.springCloudBus.anonymous.OGT6SA2rR_SbxUyN3fLqAg'
+2019-11-20 15:46:01,328 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageChannel springCloudBus.anonymous.OGT6SA2rR_SbxUyN3fLqAg.errors
+2019-11-20 15:46:01,410 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8081"]
+2019-11-20 15:46:01,426 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8081 (http) with context path ''
+2019-11-20 15:46:01,427 INFO o.s.c.n.e.s.EurekaAutoServiceRegistration [restartedMain] Updating port to 8081
+2019-11-20 15:46:01,466 INFO o.s.b.StartupInfoLogger [restartedMain] Started OrganServiceApplication in 11.143 seconds (JVM running for 12.038)
+2019-11-20 15:51:01,159 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 15:56:01,184 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:01:01,190 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:06:01,197 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:11:01,202 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:16:01,206 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:21:01,210 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:26:01,213 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:31:01,216 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:36:01,219 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:41:01,222 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:46:01,225 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:51:01,228 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:56:01,231 INFO c.n.d.s.r.a.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2019-11-20 16:56:42,073 INFO o.s.c.n.e.s.EurekaServiceRegistry [Thread-8] Unregistering application ORGAN-SERVICE with eureka with status DOWN
+2019-11-20 16:56:42,073 WARN c.n.d.DiscoveryClient$3 [Thread-8] Saw local status change event StatusChangeEvent [timestamp=1574249202073, current=DOWN, previous=UP]
+2019-11-20 16:56:42,074 INFO c.n.d.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ORGAN-SERVICE/PRATIKD.aiit.com:organ-service:8081: registering service...
+2019-11-20 16:56:42,080 INFO c.n.d.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ORGAN-SERVICE/PRATIKD.aiit.com:organ-service:8081 - registration status: 204
+2019-11-20 16:56:42,096 INFO o.s.a.r.l.SimpleMessageListenerContainer [Thread-8] Waiting for workers to finish.
+2019-11-20 16:56:42,420 INFO o.s.a.r.l.SimpleMessageListenerContainer [Thread-8] Successfully waited for workers to finish.
+2019-11-20 16:56:42,420 INFO o.s.i.e.AbstractEndpoint [Thread-8] stopped bean 'inbound.springCloudBus.anonymous.OGT6SA2rR_SbxUyN3fLqAg'
+2019-11-20 16:56:42,423 INFO o.s.i.c.AbstractSubscribableChannel [Thread-8] Channel 'organ-service-1.springCloudBus.anonymous.OGT6SA2rR_SbxUyN3fLqAg.errors' has 1 subscriber(s).
+2019-11-20 16:56:42,424 INFO o.s.i.c.AbstractSubscribableChannel [Thread-8] Channel 'organ-service-1.springCloudBus.anonymous.OGT6SA2rR_SbxUyN3fLqAg.errors' has 0 subscriber(s).
+2019-11-20 16:56:42,428 INFO o.s.i.e.EventDrivenConsumer [Thread-8] Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-11-20 16:56:42,428 INFO o.s.i.c.AbstractSubscribableChannel [Thread-8] Channel 'organ-service-1.errorChannel' has 0 subscriber(s).
+2019-11-20 16:56:42,428 INFO o.s.i.e.AbstractEndpoint [Thread-8] stopped bean '_org.springframework.integration.errorLogger'
+2019-11-20 16:56:42,433 INFO o.s.s.c.ExecutorConfigurationSupport [Thread-8] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:56:42,437 INFO o.s.o.j.AbstractEntityManagerFactoryBean [Thread-8] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-20 16:56:42,446 INFO o.s.s.c.ExecutorConfigurationSupport [Thread-8] Shutting down ExecutorService 'taskScheduler'
+2019-11-20 16:56:42,464 INFO o.s.i.m.IntegrationMBeanExporter [Thread-8] Summary on shutdown: bean 'springCloudBusInput'
+2019-11-20 16:56:42,464 INFO o.s.i.m.IntegrationMBeanExporter [Thread-8] Summary on shutdown: bean 'errorChannel'
+2019-11-20 16:56:42,464 INFO o.s.i.m.IntegrationMBeanExporter [Thread-8] Summary on shutdown: nullChannel
+2019-11-20 16:56:42,464 INFO o.s.i.m.IntegrationMBeanExporter [Thread-8] Summary on shutdown: bean 'springCloudBusOutput'
+2019-11-20 16:56:42,465 INFO o.s.i.m.IntegrationMBeanExporter [Thread-8] Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2019-11-20 16:56:42,465 INFO o.s.i.m.IntegrationMBeanExporter [Thread-8] Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@52bc65
+2019-11-20 16:56:42,467 INFO c.n.d.DiscoveryClient [Thread-8] Shutting down DiscoveryClient ...
+2019-11-20 16:56:45,468 INFO c.n.d.DiscoveryClient [Thread-8] Unregistering ...
+2019-11-20 16:56:45,473 INFO c.n.d.DiscoveryClient [Thread-8] DiscoveryClient_ORGAN-SERVICE/PRATIKD.aiit.com:organ-service:8081 - deregister  status: 200
+2019-11-20 16:56:45,489 INFO c.n.d.DiscoveryClient [Thread-8] Completed shut down of DiscoveryClient
+2019-11-20 16:56:45,490 INFO c.z.h.HikariDataSource [Thread-8] HikariPool-1 - Shutdown initiated...
+2019-11-20 16:56:45,497 INFO c.z.h.HikariDataSource [Thread-8] HikariPool-1 - Shutdown completed.
+2019-11-20 16:56:45,834 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8bf36af3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:45,901 INFO o.s.c.c.c.ConfigServicePropertySourceLocator [restartedMain] Fetching config from server at : http://localhost:8888
+2019-11-20 16:56:46,139 INFO o.s.c.c.c.ConfigServicePropertySourceLocator [restartedMain] Located environment: name=organ-service, profiles=[development], label=null, version=c535c953699ab79fdd8273292e2d6dea5533acf4, state=null
+2019-11-20 16:56:46,139 INFO o.s.c.b.c.PropertySourceBootstrapConfiguration [restartedMain] Located property source: OriginTrackedCompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/organ-service-development.yml'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/organ-service.yml'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/application.yml'}]}
+2019-11-20 16:56:46,160 INFO o.s.b.SpringApplication [restartedMain] The following profiles are active: development
+2019-11-20 16:56:46,621 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-20 16:56:46,627 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 6ms. Found 1 repository interfaces.
+2019-11-20 16:56:46,722 INFO o.s.c.c.s.GenericScope [restartedMain] BeanFactory id=2d17db07-2f48-3bb3-9528-71f21ddf0569
+2019-11-20 16:56:46,738 INFO o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor [restartedMain] No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-11-20 16:56:46,738 INFO o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor [restartedMain] No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-11-20 16:56:46,739 INFO o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor [restartedMain] No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-11-20 16:56:46,759 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,770 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,771 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,773 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@266c101e' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,773 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,774 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,776 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'integrationChannelResolver' of type [org.springframework.integration.support.channel.BeanFactoryChannelResolver] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,777 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,785 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,787 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration' of type [org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration$IntegrationJmxConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,791 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration' of type [org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,792 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'mbeanServer' of type [com.sun.jmx.mbeanserver.JmxMBeanServer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,807 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$8bf36af3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-20 16:56:46,887 WARN o.a.j.l.DirectJDKLog [restartedMain] The MBean registry cannot be disabled because it has already been initialised
+2019-11-20 16:56:46,954 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8081 (http)
+2019-11-20 16:56:46,954 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8081"]
+2019-11-20 16:56:46,954 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2019-11-20 16:56:46,955 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-20 16:56:46,985 INFO o.a.j.l.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2019-11-20 16:56:46,986 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 822 ms
+2019-11-20 16:56:47,338 INFO o.s.s.c.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'taskScheduler'
+2019-11-20 16:56:47,480 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-11-20 16:56:47,487 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2019-11-20 16:56:47,490 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2019-11-20 16:56:47,491 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2019-11-20 16:56:47,570 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-11-20 16:56:47,571 INFO o.s.o.j.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-20 16:56:47,609 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2019-11-20 16:56:47,708 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-20 16:56:47,755 WARN c.n.c.s.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2019-11-20 16:56:47,755 INFO c.n.c.s.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-11-20 16:56:47,819 INFO o.s.s.c.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:56:48,010 INFO o.s.c.f.c.c.BeanFactoryAwareFunctionRegistry [restartedMain] Looking up function 'null' with acceptedOutputTypes: []
+2019-11-20 16:56:48,111 INFO o.s.b.a.s.s.UserDetailsServiceAutoConfiguration [restartedMain] 
+
+Using generated security password: 5d0bb6ef-720a-44c6-abf5-7a08fecd15eb
+
+2019-11-20 16:56:48,142 INFO o.s.s.w.DefaultSecurityFilterChain [restartedMain] Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7435e13b, org.springframework.security.web.context.SecurityContextPersistenceFilter@31364c43, org.springframework.security.web.header.HeaderWriterFilter@5f73429f, org.springframework.security.web.authentication.logout.LogoutFilter@6d46c24b, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@3ccb3651, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ee21318, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b40c3e1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3074c718, org.springframework.security.web.session.SessionManagementFilter@27fc5d0a, org.springframework.security.web.access.ExceptionTranslationFilter@2adeaaaf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@112924f1]
+2019-11-20 16:56:48,227 WARN o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger [restartedMain] You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2019-11-20 16:56:48,256 INFO o.s.b.a.e.w.EndpointLinksResolver [restartedMain] Exposing 22 endpoint(s) beneath base path '/actuator'
+2019-11-20 16:56:48,362 INFO o.s.i.c.AbstractSubscribableChannel [restartedMain] Channel 'organ-service-1.springCloudBusInput' has 1 subscriber(s).
+2019-11-20 16:56:48,386 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageChannel springCloudBusInput
+2019-11-20 16:56:48,394 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageChannel nullChannel
+2019-11-20 16:56:48,399 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageChannel errorChannel
+2019-11-20 16:56:48,405 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageChannel springCloudBusOutput
+2019-11-20 16:56:48,416 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageHandler errorLogger
+2019-11-20 16:56:48,422 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageHandler org.springframework.cloud.stream.binding.StreamListenerMessageHandler@60637d1b
+2019-11-20 16:56:48,434 INFO o.s.i.e.EventDrivenConsumer [restartedMain] Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-11-20 16:56:48,434 INFO o.s.i.c.AbstractSubscribableChannel [restartedMain] Channel 'organ-service-1.errorChannel' has 1 subscriber(s).
+2019-11-20 16:56:48,434 INFO o.s.i.e.AbstractEndpoint [restartedMain] started bean '_org.springframework.integration.errorLogger'
+2019-11-20 16:56:48,498 INFO o.s.c.c.c.ConfigServicePropertySourceLocator [restartedMain] Fetching config from server at : http://localhost:8888
+2019-11-20 16:56:48,664 INFO o.s.c.c.c.ConfigServicePropertySourceLocator [restartedMain] Located environment: name=organ-service, profiles=[development], label=null, version=c535c953699ab79fdd8273292e2d6dea5533acf4, state=null
+2019-11-20 16:56:48,664 INFO o.s.c.b.c.PropertySourceBootstrapConfiguration [restartedMain] Located property source: OriginTrackedCompositePropertySource {name='configService', propertySources=[MapPropertySource {name='configClient'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/organ-service-development.yml'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/organ-service.yml'}, OriginTrackedMapPropertySource {name='git://aiicsv02/microservices-poc.git/config-properties/application.yml'}]}
+2019-11-20 16:56:48,737 INFO o.s.a.r.c.AbstractConnectionFactory [restartedMain] Attempting to connect to: [172.28.42.132:5672]
+2019-11-20 16:56:48,748 INFO o.s.a.r.c.AbstractConnectionFactory [restartedMain] Created new connection: rabbitConnectionFactory#7a666320:0/SimpleConnection@67a50a53 [delegate=amqp://guest@172.28.42.132:5672/, localPort= 53715]
+2019-11-20 16:56:48,757 INFO o.s.i.c.AbstractSubscribableChannel [restartedMain] Channel 'organ-service-1.springCloudBusOutput' has 1 subscriber(s).
+2019-11-20 16:56:48,762 INFO o.s.c.n.e.InstanceInfoFactory [restartedMain] Setting initial instance status as: STARTING
+2019-11-20 16:56:48,766 INFO c.n.d.DiscoveryClient [restartedMain] Initializing Eureka in region us-east-1
+2019-11-20 16:56:48,770 INFO c.n.d.p.DiscoveryJerseyProvider [restartedMain] Using JSON encoding codec LegacyJacksonJson
+2019-11-20 16:56:48,770 INFO c.n.d.p.DiscoveryJerseyProvider [restartedMain] Using JSON decoding codec LegacyJacksonJson
+2019-11-20 16:56:48,770 INFO c.n.d.p.DiscoveryJerseyProvider [restartedMain] Using XML encoding codec XStreamXml
+2019-11-20 16:56:48,770 INFO c.n.d.p.DiscoveryJerseyProvider [restartedMain] Using XML decoding codec XStreamXml
+2019-11-20 16:56:48,826 INFO c.n.d.s.r.a.ConfigClusterResolver [restartedMain] Resolving eureka endpoints via configuration
+2019-11-20 16:56:48,833 INFO c.n.d.DiscoveryClient [restartedMain] Disable delta property : false
+2019-11-20 16:56:48,833 INFO c.n.d.DiscoveryClient [restartedMain] Single vip registry refresh property : null
+2019-11-20 16:56:48,833 INFO c.n.d.DiscoveryClient [restartedMain] Force full registry fetch : false
+2019-11-20 16:56:48,833 INFO c.n.d.DiscoveryClient [restartedMain] Application is null : false
+2019-11-20 16:56:48,833 INFO c.n.d.DiscoveryClient [restartedMain] Registered Applications size is zero : true
+2019-11-20 16:56:48,833 INFO c.n.d.DiscoveryClient [restartedMain] Application version is -1: true
+2019-11-20 16:56:48,833 INFO c.n.d.DiscoveryClient [restartedMain] Getting all instance registry info from the eureka server
+2019-11-20 16:56:48,836 INFO c.n.d.DiscoveryClient [restartedMain] The response status is 200
+2019-11-20 16:56:48,836 INFO c.n.d.DiscoveryClient [restartedMain] Starting heartbeat executor: renew interval is: 1
+2019-11-20 16:56:48,837 INFO c.n.d.InstanceInfoReplicator [restartedMain] InstanceInfoReplicator onDemand update allowed rate per min is 4
+2019-11-20 16:56:48,838 INFO c.n.d.DiscoveryClient [restartedMain] Discovery Client initialized at timestamp 1574249208838 with initial instances count: 1
+2019-11-20 16:56:48,843 INFO o.s.c.n.e.s.EurekaServiceRegistry [restartedMain] Registering application ORGAN-SERVICE with eureka with status UP
+2019-11-20 16:56:48,843 INFO c.n.d.DiscoveryClient$3 [restartedMain] Saw local status change event StatusChangeEvent [timestamp=1574249208843, current=UP, previous=STARTING]
+2019-11-20 16:56:48,843 INFO c.n.d.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ORGAN-SERVICE/PRATIKD.aiit.com:organ-service:8081: registering service...
+2019-11-20 16:56:48,846 INFO c.n.d.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ORGAN-SERVICE/PRATIKD.aiit.com:organ-service:8081 - registration status: 204
+2019-11-20 16:56:48,862 INFO o.s.c.s.b.r.p.RabbitExchangeQueueProvisioner [restartedMain] declaring queue for inbound: springCloudBus.anonymous.xcl5ltYJTi6ZBTkf5brzpA, bound to: springCloudBus
+2019-11-20 16:56:48,874 INFO o.s.i.c.AbstractSubscribableChannel [restartedMain] Channel 'springCloudBus.anonymous.xcl5ltYJTi6ZBTkf5brzpA.errors' has 1 subscriber(s).
+2019-11-20 16:56:48,874 INFO o.s.i.c.AbstractSubscribableChannel [restartedMain] Channel 'springCloudBus.anonymous.xcl5ltYJTi6ZBTkf5brzpA.errors' has 2 subscriber(s).
+2019-11-20 16:56:48,878 INFO o.s.i.e.AbstractEndpoint [restartedMain] started bean 'inbound.springCloudBus.anonymous.xcl5ltYJTi6ZBTkf5brzpA'
+2019-11-20 16:56:48,905 INFO o.s.i.m.IntegrationMBeanExporter [restartedMain] Registering MessageChannel springCloudBus.anonymous.xcl5ltYJTi6ZBTkf5brzpA.errors
+2019-11-20 16:56:48,951 INFO o.a.j.l.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8081"]
+2019-11-20 16:56:48,954 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8081 (http) with context path ''
+2019-11-20 16:56:48,955 INFO o.s.c.n.e.s.EurekaAutoServiceRegistration [restartedMain] Updating port to 8081
+2019-11-20 16:56:48,981 INFO o.s.b.StartupInfoLogger [restartedMain] Started OrganServiceApplication in 3.245 seconds (JVM running for 4259.479)
+2019-11-20 16:56:48,984 INFO o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2019-11-20 16:57:01,483 INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(2)-127.0.0.1] Application shutdown requested.
+2019-11-20 16:57:01,484 INFO o.s.c.n.e.s.EurekaServiceRegistry [RMI TCP Connection(2)-127.0.0.1] Unregistering application ORGAN-SERVICE with eureka with status DOWN
+2019-11-20 16:57:01,484 WARN c.n.d.DiscoveryClient$3 [RMI TCP Connection(2)-127.0.0.1] Saw local status change event StatusChangeEvent [timestamp=1574249221484, current=DOWN, previous=UP]
+2019-11-20 16:57:01,484 INFO c.n.d.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ORGAN-SERVICE/PRATIKD.aiit.com:organ-service:8081: registering service...
+2019-11-20 16:57:01,486 INFO c.n.d.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ORGAN-SERVICE/PRATIKD.aiit.com:organ-service:8081 - registration status: 204
+2019-11-20 16:57:01,494 INFO o.s.a.r.l.SimpleMessageListenerContainer [RMI TCP Connection(2)-127.0.0.1] Waiting for workers to finish.
+2019-11-20 16:57:01,888 INFO o.s.a.r.l.SimpleMessageListenerContainer [RMI TCP Connection(2)-127.0.0.1] Successfully waited for workers to finish.
+2019-11-20 16:57:01,888 INFO o.s.i.e.AbstractEndpoint [RMI TCP Connection(2)-127.0.0.1] stopped bean 'inbound.springCloudBus.anonymous.xcl5ltYJTi6ZBTkf5brzpA'
+2019-11-20 16:57:01,893 INFO o.s.i.c.AbstractSubscribableChannel [RMI TCP Connection(2)-127.0.0.1] Channel 'organ-service-1.springCloudBus.anonymous.xcl5ltYJTi6ZBTkf5brzpA.errors' has 1 subscriber(s).
+2019-11-20 16:57:01,894 INFO o.s.i.c.AbstractSubscribableChannel [RMI TCP Connection(2)-127.0.0.1] Channel 'organ-service-1.springCloudBus.anonymous.xcl5ltYJTi6ZBTkf5brzpA.errors' has 0 subscriber(s).
+2019-11-20 16:57:01,898 INFO o.s.i.e.EventDrivenConsumer [RMI TCP Connection(2)-127.0.0.1] Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-11-20 16:57:01,899 INFO o.s.i.c.AbstractSubscribableChannel [RMI TCP Connection(2)-127.0.0.1] Channel 'organ-service-1.errorChannel' has 0 subscriber(s).
+2019-11-20 16:57:01,899 INFO o.s.i.e.AbstractEndpoint [RMI TCP Connection(2)-127.0.0.1] stopped bean '_org.springframework.integration.errorLogger'
+2019-11-20 16:57:01,903 INFO o.s.s.c.ExecutorConfigurationSupport [RMI TCP Connection(2)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-20 16:57:01,904 INFO o.s.o.j.AbstractEntityManagerFactoryBean [RMI TCP Connection(2)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-20 16:57:01,908 INFO o.s.s.c.ExecutorConfigurationSupport [RMI TCP Connection(2)-127.0.0.1] Shutting down ExecutorService 'taskScheduler'
+2019-11-20 16:57:01,917 INFO o.s.i.m.IntegrationMBeanExporter [RMI TCP Connection(2)-127.0.0.1] Summary on shutdown: bean 'springCloudBusInput'
+2019-11-20 16:57:01,918 INFO o.s.i.m.IntegrationMBeanExporter [RMI TCP Connection(2)-127.0.0.1] Summary on shutdown: nullChannel
+2019-11-20 16:57:01,918 INFO o.s.i.m.IntegrationMBeanExporter [RMI TCP Connection(2)-127.0.0.1] Summary on shutdown: bean 'errorChannel'
+2019-11-20 16:57:01,918 INFO o.s.i.m.IntegrationMBeanExporter [RMI TCP Connection(2)-127.0.0.1] Summary on shutdown: bean 'springCloudBusOutput'
+2019-11-20 16:57:01,919 INFO o.s.i.m.IntegrationMBeanExporter [RMI TCP Connection(2)-127.0.0.1] Summary on shutdown: bean '_org.springframework.integration.errorLogger.handler' for component '_org.springframework.integration.errorLogger'
+2019-11-20 16:57:01,919 INFO o.s.i.m.IntegrationMBeanExporter [RMI TCP Connection(2)-127.0.0.1] Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@60637d1b
+2019-11-20 16:57:01,920 INFO c.n.d.DiscoveryClient [RMI TCP Connection(2)-127.0.0.1] Shutting down DiscoveryClient ...
+2019-11-20 16:57:04,922 INFO c.n.d.DiscoveryClient [RMI TCP Connection(2)-127.0.0.1] Unregistering ...
+2019-11-20 16:57:04,924 INFO c.n.d.DiscoveryClient [RMI TCP Connection(2)-127.0.0.1] DiscoveryClient_ORGAN-SERVICE/PRATIKD.aiit.com:organ-service:8081 - deregister  status: 200
+2019-11-20 16:57:04,930 INFO c.n.d.DiscoveryClient [RMI TCP Connection(2)-127.0.0.1] Completed shut down of DiscoveryClient
+2019-11-20 16:57:04,930 INFO c.z.h.HikariDataSource [RMI TCP Connection(2)-127.0.0.1] HikariPool-2 - Shutdown initiated...
+2019-11-20 16:57:04,936 INFO c.z.h.HikariDataSource [RMI TCP Connection(2)-127.0.0.1] HikariPool-2 - Shutdown completed.
+2019-11-20 16:57:04,937 INFO o.a.j.l.DirectJDKLog [RMI TCP Connection(2)-127.0.0.1] Pausing ProtocolHandler ["http-nio-8081"]
+2019-11-20 16:57:04,969 INFO o.a.j.l.DirectJDKLog [RMI TCP Connection(2)-127.0.0.1] Stopping service [Tomcat]
+2019-11-20 16:57:04,974 INFO o.a.j.l.DirectJDKLog [RMI TCP Connection(2)-127.0.0.1] Stopping ProtocolHandler ["http-nio-8081"]
+2019-11-20 16:57:04,978 INFO o.a.j.l.DirectJDKLog [RMI TCP Connection(2)-127.0.0.1] Destroying ProtocolHandler ["http-nio-8081"]

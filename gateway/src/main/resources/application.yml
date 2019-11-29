@@ -1,0 +1,93 @@
+server:
+   port: 8070
+logging:
+   level:
+      root: INFO
+      org.springframework.web: TRACE
+      org.springframework.security.oauth2: TRACE
+      org.springframework.cloud: INFO
+      org.springframework.security: TRACE
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://localhost:8761/eureka/
+      healthcheck:
+         enabled: true
+spring:
+   application:
+      name: gateway
+   autoconfigure:
+      exclude: org.springframework.boot.actuate.autoconfigure.security.reactive.ReactiveManagementWebSecurityAutoConfiguration
+# TODO: remove when fixed https://github.com/spring-projects/spring-security/issues/6314
+   security:
+      oauth2:
+         client:
+            registration:
+               clientId:
+                  provider: authorization-server
+                  client-id: clientId
+                  client-secret: secret
+                  authorization-grant-type: password, refresh_token, client_credentials
+                  scope: read,write
+            provider:
+               authorization-server:
+                  authorization-uri: http://localhost:8080/oauth/authorize
+                  token-uri: http://localhost:8080/oauth/token
+                  user-info-uri: http://localhost:8082/me
+         resourceserver:
+            opaquetoken:
+               introspection-uri: http://localhost:8080/oauth/check_token
+               client-id: clientId
+               client-secret: secret
+   cloud:
+      gateway:
+         discovery:
+            locator:
+               enabled: true
+#          globalcors:
+#             corsConfigurations:
+#                '[/**]':
+#                   allowedOrigins: http://localhost:9000
+#                   allowedMethods:
+#                   - GET
+# Comment start: Adding routes in yaml file results in 401 for access token endpoint.
+#          routes:
+#          -  id: authorization-server
+#             uri: lb://authorization-server
+#             predicates:
+#             - Path=/oauth2/**
+#             filters:
+#             -  name: Hystrix
+#                args:
+#                   name: authorization-server-fallback
+#                   fallbackUri: forward:/fallback         
+#          -  id: greeting-service
+#             uri: lb://greeting-service
+#             predicates:
+#             - Path=/greeting**
+#             filters:
+#             -  name: Hystrix
+#                args:
+#                   name: greeting-service-fallback
+#                   fallbackUri: forward:/fallback
+#          -  id: resource-server
+#             uri: lb://resource-server
+#             predicates:
+#             - Path=/me
+#             filters:
+#             -  TokenRelay
+#             -  name: Hystrix
+#                args:
+#                   name: resource-server-fallback
+#                   fallbackUri: forward:/fallback
+#          -  id: organ-service
+#             uri: lb://organ-service
+#             predicates:
+#             - Path=/api/organs/**
+#             filters:
+#             -  TokenRelay           
+#             -  name: Hystrix
+#                args:
+#                   name: organ-service-fallback
+#                   fallbackUri: forward:/fallback
+# Comment end
