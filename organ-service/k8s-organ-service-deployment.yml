@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: organ-service
+  labels:
+    app: organ-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: organ-service
+  template:
+    metadata:
+      labels:
+        app: organ-service
+    spec:
+      containers:
+      - name: organ-service
+        image: dockerhub.airamatrix.in:50000/organ-service:latest
+        # imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8081
+        env:
+        # - name: SPRING_JPA_DATABASE
+        #   value: docker-mysql
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:mysql://docker-mysql:3306/microservices?useSSL=false
+        - name: SPRING_DATASOURCE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_USER
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_PASSWORD
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: organ-service
+  labels:
+    app: organ-service
+spec:
+  ports:
+  - port: 8081
+    protocol: TCP
+  selector:
+    app: organ-service

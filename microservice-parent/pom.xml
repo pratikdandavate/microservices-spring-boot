@@ -1,26 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.aira</groupId>
 	<artifactId>microservice-parent</artifactId>
-	<version>${parent.version}</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>microservice-parent</name>
 	<packaging>pom</packaging>
 	<description>Microservices parent</description>
 
 	<properties>
 		<parent.version>0.0.1-SNAPSHOT</parent.version>
-		<spring-cloud.version>Hoxton.RC2</spring-cloud.version>
+		<spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
 		<java.version>1.8</java.version>
- 		<oauth.version>2.3.8.RELEASE</oauth.version>
+		<oauth.version>2.3.8.RELEASE</oauth.version>
+		<fabric8io.docker.version>0.30.0</fabric8io.docker.version>
+		<docker.registry>dockerhub.airamatrix.in:50000</docker.registry>
+		<docker.image.tag>latest</docker.image.tag>
+		<docker.repository>${project.name}:${docker.image.tag}</docker.repository>
+		<docker.fileName>Dockerfile</docker.fileName>
+		<docker.skip>false</docker.skip>
+
 	</properties>
+
+	<modules>
+			<module>../config-server</module>
+			<module>../AuthServer</module>
+			<module>../discovery-service</module>
+			<module>../slide-service</module>
+			<module>../organ-service</module>
+	</modules>
 
 	<dependencies>
 		<dependency>
@@ -42,15 +56,137 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+	<profiles>
+		<profile>
+			<id>buildDocker</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<groupId>io.fabric8</groupId>
+						<artifactId>docker-maven-plugin</artifactId>
+						<version>${fabric8io.docker.version}</version>
+						<configuration>
+							<dockerHost>unix:///var/run/docker.sock</dockerHost>
+							<registry>${docker.registry}</registry>
+							<useColor>true</useColor>
+							<verbose>true</verbose>
+							<skip>${docker.skip}</skip>
+							<!-- <skip>true</skip> -->
+							<buildArgs>
+								<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+							</buildArgs>
+							<images>
+								<image>
+									<name>${docker.repository}</name>
+									<build>
+										<contextDir>${project.basedir}</contextDir>
+										<!-- <dockerFileDir>${project.build.directory}</dockerFileDir> -->
+										<filter>@</filter>
+										<dockerFile>${docker.fileName}</dockerFile>
+										<tags>
+											<tag>${docker.image.tag}</tag>
+										</tags>
+									</build>
+								</image>
+							</images>
+						</configuration>
+						<executions>
+							<execution>
+								<id>start</id>
+								<phase>pre-integration-test</phase>
+								<goals>
+									<!-- "build" should be used to create the images with the artifact -->
+									<goal>build</goal>
+									<goal>start</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>stop</id>
+								<phase>post-integration-test</phase>
+								<goals>
+									<goal>stop</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>springboot</id>
+			<activation>
+				<file>
+					 <!-- Just a way to identify a Spring Boot application -->
+					<exists>src/main/resources/bootstrap.yml</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<configuration>
+							<fork>true</fork>
+						</configuration>
+						<executions>
+							<execution>
+								<!-- Spring Boot Actuator displays build-related information if a META-INF/build-info.properties file is present -->
+								<goals>
+									<goal>build-info</goal>
+								</goals>
+								<configuration>
+									<additionalProperties>
+										<encoding.source>${project.build.sourceEncoding}</encoding.source>
+										<encoding.reporting>${project.reporting.outputEncoding}</encoding.reporting>
+										<java.source>${maven.compiler.source}</java.source>
+										<java.target>${maven.compiler.target}</java.target>
+									</additionalProperties>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 
+					<!-- Spring Boot Actuator displays build-related information if a META-INF/build-info.properties file is present -->
+					<plugin>
+						<groupId>pl.project13.maven</groupId>
+						<artifactId>git-commit-id-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>revision</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<!-- <dotGitDirectory>${project.basedir}/../.git</dotGitDirectory> -->
+							<verbose>true</verbose>
+							<dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
+							<generateGitPropertiesFile>true</generateGitPropertiesFile>
+							<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties
+								</generateGitPropertiesFilename>
+							<failOnNoGitDirectory>false</failOnNoGitDirectory>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>docker</id>
+			<properties>
+				<docker.skip>true</docker.skip>
+			</properties>
+			<activation>
+				<property>
+					<name>skipDocker</name>
+					<value>true</value>
+				</property>
+			</activation>
+		</profile>
+	</profiles>
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>

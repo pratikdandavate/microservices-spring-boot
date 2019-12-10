@@ -1,0 +1,32 @@
+logging:
+  level:
+    org.springframework.security: INFO
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+spring:
+    cloud:
+        config:
+            server:
+                git:
+                    # uri: git://aiicsv02/microservices-poc.git
+                    uri: https://github.com/pratikdandavate/configuration-properties
+                    # searchPaths: config-properties
+        # Use the File System Backend to avoid git pulling. Enable "native" profile in the Config Server.
+                native:
+                    searchLocations: classpath:/shared
+            # Allow the microservices to override the remote properties with their own System properties or config file
+            allow-override: true
+            # Override configuration with any local property source
+            override-none: true
+
+    rabbitmq:
+        host: rabbitmq
+        port: 5672
+        username: guest
+        password: guest

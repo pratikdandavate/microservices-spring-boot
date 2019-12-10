@@ -1,0 +1,24 @@
+server:
+   port: 9091
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://localhost:8761/eureka/
+spring:
+   application:
+      name: airadhi-demo-service
+   datasource:
+      url: jdbc:mysql://172.28.42.132:3306
+      username: root
+      password: root1234
+      driverClassName: com.mysql.jdbc.Driver
+      connectionTimeout: 20000
+      maxPoolSize: 10
+      idleTimeout: 300000
+      minIdle: 10
+   jpa:
+      database: mysql
+      hibernate:
+         ddl-auto: update
+         naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+         

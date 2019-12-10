@@ -1,34 +1,33 @@
 server:
   # Port 0 to assign random server port  
   port: ${PORT:8081}
-eureka:
-  instance:
-    # enable to register multiple app instances with a random server port
-    instance-id: ${spring.application.name}:${random.uuid}
 
----
-
+  
 eureka:  
   client:
+    registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
   instance:
+    instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}  
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
+     
  
 spring:
+  # profiles: development
   datasource:
-    url: jdbc:mysql://localhost:3306/microservices?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/microservices?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&failOverReadOnly=false&maxReconnects=10&allowPublicKeyRetrieval=true
     # url: jdbc:mysql://docker-mysql:3306/microservices?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
     username: root
     password: root
-#    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: update
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    # database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
   application:
     name: organ-service
 # Zipkin info
@@ -51,6 +50,33 @@ management:
       exposure:
         include: "*"
 
+---
 
+spring:
+  profiles: docker
+  zipkin:
+      base-url: http://zipkin-server:9411/
+  datasource:
+      url: jdbc:mysql://docker-mysql:3306/microservices?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&failOverReadOnly=false&maxReconnects=10&allowPublicKeyRetrieval=true
+      username: root
+      password: root      
+# eureka:
+#   client:
+#     serviceUrl:
+#       defaultZone: http://discovery-server:8761/eureka/
 
+  cloud:
+    kubernetes:
+      enabled: true
+      reload:
+        enabled: true
+eureka:
+  client:
+    enabled: false
+
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://auth-server:9191/oauth/check_token
+      
 

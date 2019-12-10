@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata: 
+  name: ingress-wear-watch
+spec:
+  rules:
+  - host: sandbox.airamatrix.in
+    http:
+      paths: 
+      - path: /organs
+        backend:
+          serviceName: organ-service
+          servicePort: 8081
+      - path: /slides
+        backend:
+          serviceName: slide-service
+          servicePort: 8082
+      - path: /oauth
+        backend:
+          serviceName: auth-server
+          servicePort: 9191

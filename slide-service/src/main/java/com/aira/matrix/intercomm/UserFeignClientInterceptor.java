@@ -8,6 +8,11 @@ import org.springframework.stereotype.Component;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 
+/**
+ * 
+ * @author Pratik.Dandavate
+ * @version 1.0
+ */
 @Component
 public class UserFeignClientInterceptor implements RequestInterceptor {
 

@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ziplin
+  labels:
+    app: ziplin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ziplin
+  template:
+    metadata:
+      labels:
+        app: ziplin
+    spec:
+      containers:
+      - name: ziplin
+        image: openzipkin/zipkin
+        ports:
+        - containerPort: 9411
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ziplin
+  labels:
+    app: ziplin
+spec:
+  ports:
+  - port: 9411
+    protocol: TCP
+  selector:
+    app: ziplin
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbitmq
+  labels:
+    app: rabbitmq
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+      - name: rabbitmq
+        image: rabbitmq:3-management
+        ports:
+        - containerPort: 5672
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+  labels:
+    app: rabbitmq
+spec:
+  ports:
+  - port: 5672
+    protocol: TCP
+  selector:
+    app: rabbitmq
+  type: NodePort

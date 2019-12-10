@@ -1,12 +1,18 @@
 spring:
+  cloud:
+    config:
+       uri: http://localhost:8888
+
   application:
     name: slide-service
   profiles:
     active:
     - development
-
-# N.B. this is the default:
-    
+    # - docker
+       
+---
+spring:
+  profiles: docker
   cloud:
     config:
-       uri: http://localhost:8888
+      uri: http://config-server:8888

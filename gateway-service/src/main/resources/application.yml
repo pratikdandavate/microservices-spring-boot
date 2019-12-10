@@ -1,0 +1,50 @@
+server:
+  port: ${PORT:8765}
+  
+info:
+  component: Zuul Server
+
+management:
+  endpoint:
+    restart:
+      enabled: true
+    shutdown:
+      enabled: true
+    health:
+      enabled: false
+
+zuul:
+ prefix: /api
+ routes:
+    organ: 
+       path: /organ/**
+       serviceId: organ-service          
+    slide: 
+       path: /slide/**
+       serviceId: slide-service          
+
+ribbon:
+ eager-load:
+    enabled: true
+
+ 
+eureka:  
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
+    registerWithEureka: false
+
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:9191/oauth/check_token
+    client:
+      client-id: mobile
+      client-secret: secret
+      user-authorization-uri: http://localhost:9191/oauth/authorize
+      access-token-uri: http://localhost:9191/oauth/token
+    
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
