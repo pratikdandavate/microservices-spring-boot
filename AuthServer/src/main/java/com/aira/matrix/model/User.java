@@ -31,7 +31,7 @@ public class User implements Serializable {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "username")
@@ -59,133 +59,133 @@ public class User implements Serializable {
     /**
   	 * @return the id
   	 */
-  	Integer getId() {
+  	public Integer getId() {
   		return id;
   	}
 
   	/**
   	 * @param id the id to set
   	 */
-  	void setId(Integer id) {
+  	public void setId(Integer id) {
   		this.id = id;
   	}
 
   	/**
   	 * @return the username
   	 */
-  	String getUsername() {
+  	public String getUsername() {
   		return username;
   	}
 
   	/**
   	 * @param username the username to set
   	 */
-  	void setUsername(String username) {
+  	public void setUsername(String username) {
   		this.username = username;
   	}
 
   	/**
   	 * @return the password
   	 */
-  	String getPassword() {
+  	public String getPassword() {
   		return password;
   	}
 
   	/**
   	 * @param password the password to set
   	 */
-  	void setPassword(String password) {
+  	public void setPassword(String password) {
   		this.password = password;
   	}
 
   	/**
   	 * @return the email
   	 */
-  	String getEmail() {
+  	public String getEmail() {
   		return email;
   	}
 
   	/**
   	 * @param email the email to set
   	 */
-  	void setEmail(String email) {
+  	public void setEmail(String email) {
   		this.email = email;
   	}
 
   	/**
   	 * @return the enabled
   	 */
-  	boolean isEnabled() {
+  	public boolean isEnabled() {
   		return enabled;
   	}
 
   	/**
   	 * @param enabled the enabled to set
   	 */
-  	void setEnabled(boolean enabled) {
+  	public void setEnabled(boolean enabled) {
   		this.enabled = enabled;
   	}
 
   	/**
   	 * @return the accountNonExpired
   	 */
-  	boolean isAccountNonExpired() {
+  	public boolean isAccountNonExpired() {
   		return accountNonExpired;
   	}
 
   	/**
   	 * @param accountNonExpired the accountNonExpired to set
   	 */
-  	void setAccountNonExpired(boolean accountNonExpired) {
+  	public void setAccountNonExpired(boolean accountNonExpired) {
   		this.accountNonExpired = accountNonExpired;
   	}
 
   	/**
   	 * @return the credentialsNonExpired
   	 */
-  	boolean isCredentialsNonExpired() {
+  	public boolean isCredentialsNonExpired() {
   		return credentialsNonExpired;
   	}
 
   	/**
   	 * @param credentialsNonExpired the credentialsNonExpired to set
   	 */
-  	void setCredentialsNonExpired(boolean credentialsNonExpired) {
+  	public void setCredentialsNonExpired(boolean credentialsNonExpired) {
   		this.credentialsNonExpired = credentialsNonExpired;
   	}
 
   	/**
   	 * @return the accountNonLocked
   	 */
-  	boolean isAccountNonLocked() {
+  	public boolean isAccountNonLocked() {
   		return accountNonLocked;
   	}
 
   	/**
   	 * @param accountNonLocked the accountNonLocked to set
   	 */
-  	void setAccountNonLocked(boolean accountNonLocked) {
+  	public void setAccountNonLocked(boolean accountNonLocked) {
   		this.accountNonLocked = accountNonLocked;
   	}
 
   	/**
   	 * @return the roles
   	 */
-  	List<Role> getRoles() {
+  	public List<Role> getRoles() {
   		return roles;
   	}
 
   	/**
   	 * @param roles the roles to set
   	 */
-  	void setRoles(List<Role> roles) {
+  	public void setRoles(List<Role> roles) {
   		this.roles = roles;
   	}
 
   	/**
   	 * @return the serialversionuid
   	 */
-  	static long getSerialversionuid() {
+  	public static long getSerialversionuid() {
   		return serialVersionUID;
   	}
 

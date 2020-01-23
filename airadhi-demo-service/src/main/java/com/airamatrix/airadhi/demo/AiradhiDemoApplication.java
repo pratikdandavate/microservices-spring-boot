@@ -12,14 +12,4 @@ public class AiradhiDemoApplication {
 	SpringApplication.run(AiradhiDemoApplication.class, args);
     }
 
-//    @Bean
-//    public DataSource getDataSource() {
-//	DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
-//	dataSourceBuilder.driverClassName("com.mysql.cj.jdbc.Driver");
-//	dataSourceBuilder.url("jdbc:mysql://172.28.42.132:3306");
-//	dataSourceBuilder.username("root");
-//	dataSourceBuilder.password("root1234");
-//	return dataSourceBuilder.build();
-//    }
-
 }

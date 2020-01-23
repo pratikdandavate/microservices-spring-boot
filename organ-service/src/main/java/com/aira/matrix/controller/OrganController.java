@@ -1,6 +1,8 @@
 package com.aira.matrix.controller;
 
+import java.security.Principal;
 import java.util.List;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -8,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.aira.matrix.exception.ResourceNotFoundException;
 import com.aira.matrix.model.Organ;
+import com.aira.matrix.model.UserPrincipal;
 import com.aira.matrix.repository.OrganRepository;
 
 /**
@@ -33,13 +38,15 @@ public class OrganController {
     OrganRepository organRepository;
 
     @GetMapping("/organs")
-    public List<Organ> getAllOrgans() {
+    public List<Organ> getAllOrgans(@AuthenticationPrincipal Principal user) {
+//    	UserPrincipal userPrincipal = (UserPrincipal) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    	System.out.println(user.toString());
         LOG.info("Get all organs API called. Response :" + organRepository.findAll());
         return organRepository.findAll();
     }
 
     @PostMapping("/organs")
-    @PreAuthorize("hasAuthority('create_profile')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Organ createOrgan(@Valid @RequestBody Organ organ) {
         LOG.info("Create API called with Request :" + organ);
         return organRepository.save(organ);

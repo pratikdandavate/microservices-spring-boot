@@ -11,7 +11,7 @@ spring:
       url: jdbc:mysql://172.28.42.132:3306
       username: root
       password: root1234
-      driverClassName: com.mysql.jdbc.Driver
+      driverClassName: com.mysql.cj.jdbc.Driver
       connectionTimeout: 20000
       maxPoolSize: 10
       idleTimeout: 300000
@@ -19,6 +19,27 @@ spring:
    jpa:
       database: mysql
       hibernate:
+         show-sql: true
+         format-sql: true
          ddl-auto: update
          naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+multitenancy:
+   datasource:
+      url: jdbc:mysql://172.28.42.132:3306
+      username: root
+      password: root1234
+      driverClassName: com.mysql.cj.jdbc.Driver
+      connectionTimeout: 20000
+      maxPoolSize: 10
+      idleTimeout: 300000
+      minIdle: 10
+   hibernate:
+      packagesToScan: com.airamatrix.airadhi
+      showSql: true
+      formatSql: true
+      ddlAuto: update
+      
+   
+         
          

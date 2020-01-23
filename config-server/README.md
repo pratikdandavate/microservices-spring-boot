@@ -62,7 +62,12 @@ GET /{label}/{application}-{profile}.properties
 
 The refresh event is triggered by invoking the endpoint  `/actuator/bus-refresh` on any of config client and it will broadcast event to all connected clients.
 
+# Running RabbitMQ as a Docker image
 
+```
+docker run -d -p 15672:15672 -p 5672:5672 -p 5671:5671 --hostname my-rabbitmq --name my-rabbitmq-container rabbitmq:3-management
+
+```
 
  
 

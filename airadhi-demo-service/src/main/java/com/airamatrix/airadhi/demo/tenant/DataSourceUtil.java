@@ -17,81 +17,27 @@ import com.zaxxer.hikari.HikariDataSource;
 public final class DataSourceUtil {
 
     private static final Logger LOG = LoggerFactory.getLogger(DataSourceUtil.class);
-//    @Value("${spring.datasource.url}")
-//    private String dbUrl;
-//    @Value("${spring.datasource.username}")
-//    private String dbUsername;
-//    @Value("${spring.datasource.password}")
-//    private String dbPassword;
-//    @Value("${spring.datasource.driverClassName}")
-//    private String dbDriverClassName;
-//    @Value("${spring.datasource.connectionTimeout}")
-//    private int dbConnectionTimeout;
-//    @Value("${spring.datasource.maxPoolSize}")
-//    private int dbMaxPoolSize;
-//    @Value("${spring.datasource.idleTimeout}")
-//    private int dbIdleTimeout;
-//    @Value("${spring.datasource.minIdle}")
-//    private int dbMinIdle;
 
-//    public static void setDbUrl(String dbUrl) {
-//	DataSourceUtil.dbUrl = dbUrl;
-//    }
-//
-//
-//    public static void setDbUsername(String dbUsername) {
-//	DataSourceUtil.dbUsername = dbUsername;
-//    }
-//
-//
-//    public static void setDbPassword(String dbPassword) {
-//	DataSourceUtil.dbPassword = dbPassword;
-//    }
-//
-//
-//    public static void setDbDriverClassName(String dbDriverClassName) {
-//	DataSourceUtil.dbDriverClassName = dbDriverClassName;
-//    }
-//
-//
-//    public static void setDbConnectionTimeout(int dbConnectionTimeout) {
-//	DataSourceUtil.dbConnectionTimeout = dbConnectionTimeout;
-//    }
-//
-//
-//    public static void setDbMaxPoolSize(int dbMaxPoolSize) {
-//	DataSourceUtil.dbMaxPoolSize = dbMaxPoolSize;
-//    }
-//
-//
-//    public static void setDbIdleTimeout(int dbIdleTimeout) {
-//	DataSourceUtil.dbIdleTimeout = dbIdleTimeout;
-//    }
-//
-//
-//    public static void setDbMinIdle(int dbMinIdle) {
-//	DataSourceUtil.dbMinIdle = dbMinIdle;
-//    }
-
-    public static DataSource createAndConfigureDataSource(String tenantAlias) {
-	DataSourceUtil util = new DataSourceUtil();
+    public static DataSource createAndConfigureDataSource(String tenantAlias,
+	    DataSourceProperties dataSourceProperties) {
 	HikariDataSource ds = new HikariDataSource();
-	ds.setUsername("root");
-	ds.setPassword("root1234");
-	ds.setJdbcUrl("jdbc:mysql://172.28.42.132:3306" + "/" + tenantAlias);
-	ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+
+	ds.setUsername(dataSourceProperties.getUsername());
+	ds.setPassword(dataSourceProperties.getPassword());
+	ds.setJdbcUrl(dataSourceProperties.getUrl() + "/" + tenantAlias);
+	ds.setDriverClassName(dataSourceProperties.getDriverClassName());
 
 	// Maximum waiting time for a connection from the pool
-	ds.setConnectionTimeout(20000);
+	ds.setConnectionTimeout(dataSourceProperties.getConnectionTimeout());
 
 	// Minimum number of idle connections in the pool
-	ds.setMinimumIdle(10);
+	ds.setMinimumIdle(dataSourceProperties.getMinIdle());
 
 	// Maximum number of actual connection in the pool
-	ds.setMaximumPoolSize(10);
+	ds.setMaximumPoolSize(dataSourceProperties.getMaxPoolSize());
 
 	// Maximum time that a connection is allowed to sit idle in the pool
-	ds.setIdleTimeout(300000);
+	ds.setIdleTimeout(dataSourceProperties.getIdleTimeout());
 
 	// Setting up a pool name for each tenant datasource
 	String tenantConnectionPoolName = tenantAlias + "-connection-pool";

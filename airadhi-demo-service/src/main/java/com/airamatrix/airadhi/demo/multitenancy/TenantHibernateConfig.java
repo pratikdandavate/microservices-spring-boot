@@ -12,6 +12,7 @@ import org.hibernate.MultiTenancyStrategy;
 import org.hibernate.cfg.Environment;
 import org.hibernate.context.spi.CurrentTenantIdentifierResolver;
 import org.hibernate.engine.jdbc.connections.spi.MultiTenantConnectionProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
@@ -24,16 +25,21 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.airamatrix.airadhi.demo.tenant.HibernateProperties;
+
 /**
  * @author Jaikishan Gurav
  *
  */
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = { "com.airamatrix.airadhi.demo.repository", "com.airamatrix.airadhi.demo.model" })
+@ComponentScan(basePackages = { "com.airamatrix.airadhi" })
 @EnableJpaRepositories(basePackages = {
-	"com.airamatrix.airadhi.demo.repository" }, entityManagerFactoryRef = "tenantEntityManagerFactory", transactionManagerRef = "tenantTransactionManager")
+	"com.airamatrix.airadhi" }, entityManagerFactoryRef = "tenantEntityManagerFactory", transactionManagerRef = "tenantTransactionManager")
 public class TenantHibernateConfig {
+
+    @Autowired
+    private HibernateProperties properties;
 
     @Bean(name = "tenantJpaVendorAdapter")
     public JpaVendorAdapter jpaVendorAdapter() {
@@ -80,12 +86,13 @@ public class TenantHibernateConfig {
 	jpaPropertiesMap.put(Environment.MULTI_TENANT_CONNECTION_PROVIDER, multiTenantconnectionProvider);
 	jpaPropertiesMap.put(Environment.MULTI_TENANT_IDENTIFIER_RESOLVER, currentTenantIdentifierResolver);
 
-	jpaPropertiesMap.put(Environment.FORMAT_SQL, true);
-	jpaPropertiesMap.put(Environment.SHOW_SQL, true);
+	jpaPropertiesMap.put(Environment.FORMAT_SQL, properties.isFormatSql());
+	jpaPropertiesMap.put(Environment.SHOW_SQL, properties.isShowSql());
+	jpaPropertiesMap.put(Environment.HBM2DDL_AUTO, properties.getDdlAuto());
 
 	LocalContainerEntityManagerFactoryBean emfBean = new LocalContainerEntityManagerFactoryBean();
 	// All tenant related entities, repositories and service classes must be scanned
-	emfBean.setPackagesToScan("com.airamatrix.airadhi");
+	emfBean.setPackagesToScan(properties.getPackagesToScan());
 	emfBean.setJpaVendorAdapter(jpaVendorAdapter());
 	emfBean.setPersistenceUnitName("tenantdb-persistence-unit");
 
@@ -94,7 +101,6 @@ public class TenantHibernateConfig {
 	// "org.hibernate.cfg.ImprovedNamingStrategy");
 //	properties.put(org.hibernate.cfg.Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 //
-//	properties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, "update");
 
 	emfBean.setJpaPropertyMap(jpaPropertiesMap);
 	return emfBean;

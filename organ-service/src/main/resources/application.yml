@@ -2,12 +2,13 @@ server:
   # Port 0 to assign random server port  
   port: ${PORT:8081}
 
+msg: Hello
   
 eureka:  
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
+      defaultZone: ${DISCOVERY_URL:http://172.28.43.130:8761}/eureka/
   instance:
     instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}  
     leaseRenewalIntervalInSeconds: 1
@@ -40,16 +41,20 @@ spring:
 security:
   oauth2:
     resource:
+      user-info-uri: http://172.28.43.142:9191/oauth/user/me
       token-info-uri: http://172.28.43.142:9191/oauth/check_token
     client:
-      client-id: mobile
+      client-id: web
       client-secret: secret  
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-
+  endpoint:
+    restart:
+      enabled: true
+            
 ---
 
 spring:
@@ -67,9 +72,11 @@ spring:
 
   cloud:
     kubernetes:
-      enabled: true
       reload:
         enabled: true
+    loadbalancer:
+      ribbon:
+        enabled: false
 eureka:
   client:
     enabled: false
@@ -78,5 +85,4 @@ security:
   oauth2:
     resource:
       token-info-uri: http://auth-server:9191/oauth/check_token
-      
 

@@ -1,7 +1,7 @@
 package com.aira.services.tenant.payload;
 
 /**
- * @author Josh Cummings
+ * @author Jaikishan Gurav
  */
 public class Tenant {
     private String alias;

@@ -14,7 +14,7 @@ public class HelloController {
 	@Value("${msg}")
 	private String msg;	
 
-    @GetMapping("/msg")
+    @GetMapping("/slides/msg")
     public String sayHello() {
         return this.msg;
     }
